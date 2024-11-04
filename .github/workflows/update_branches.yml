@@ -1,4 +1,4 @@
-name: Update aboveS20 Branches
+name: Update branch structure
 
 on:
   push:
