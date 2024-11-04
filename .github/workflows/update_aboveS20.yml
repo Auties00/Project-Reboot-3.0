@@ -1,4 +1,4 @@
-name: Invokable Build
+name: Build aboveS20 branch
 
 on:
   repository_dispatch:
