@@ -2,9 +2,11 @@ name: MSBuild
 
 on:
   push:
-    branches: [ "master", "aboveS20" ]
+    branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+  repository_dispatch:
+    types: [publish-trigger]
 
 env:
   # Path to the solution file relative to the root of the project.
