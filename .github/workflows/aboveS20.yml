@@ -35,13 +35,13 @@ jobs:
           git push origin aboveS20
 
   build-master:
-    uses: ${{ github.repository }}/.github/workflows/msbuild.yml@master
+    uses: {owner}/{repo}/.github/workflows/msbuild.yml@master
     needs: update-branches
     with:
       branch: master
 
   build-aboveS20:
-    uses: ${{ github.repository }}/.github/workflows/msbuild.yml@aboveS20
+    uses: {owner}/{repo}/.github/workflows/msbuild.yml@aboveS20
     needs: update-branches
     with:
       branch: aboveS20
