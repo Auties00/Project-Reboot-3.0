@@ -35,13 +35,13 @@ jobs:
           git push origin aboveS20
 
   build-master:
-    uses: Auties00/Project-Reboot-3.0/.github/workflows/msbuild.yml@master 
+    uses: Auties00/Project-Reboot-3.0/.github/workflows/direct_build.yml@master 
     needs: update-branches
     with:
       branch: master
 
   build-aboveS20:
-    uses: Auties00/Project-Reboot-3.0/.github/workflows/msbuild.yml@aboveS20
+    uses: Auties00/Project-Reboot-3.0/.github/workflows/invokable_build.yml@aboveS20
     needs: update-branches
     with:
       branch: aboveS20
