@@ -1,4 +1,4 @@
-name: MSBuild
+name: Direct Build
 
 on:
   workflow_call:
