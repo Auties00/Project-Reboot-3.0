@@ -34,14 +34,14 @@ jobs:
           git commit -m "Add #define ABOVE_S20 to inc.h in aboveS20 branch"
           git push origin aboveS20
 
-      - name: Trigger build workflow on aboveS20
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.PAT_TOKEN }}
-          script: |
-            await github.actions.createWorkflowDispatch({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              workflow_id: 'msbuild.yml',
-              ref: 'aboveS20',
-            })
+  build-master:
+    uses: ./.github/workflows/msbuild.yml
+    needs: update-branches
+    with:
+      branch: master
+
+  build-aboveS20:
+    uses: ./.github/workflows/msbuild.yml
+    needs: update-branches
+    with:
+      branch: aboveS20
