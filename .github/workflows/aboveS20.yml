@@ -35,7 +35,7 @@ jobs:
           git push origin aboveS20
 
   build-master:
-    uses: Auties00/Project-Reboot-3.0/.github/workflows/msbuild.yml@master
+    uses: Auties00/Project-Reboot-3.0/.github/workflows/msbuild.yml@master 
     needs: update-branches
     with:
       branch: master
