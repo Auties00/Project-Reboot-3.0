@@ -33,3 +33,13 @@ jobs:
           git add "./Project Reboot 3.0/inc.h"
           git commit -m "Add #define ABOVE_S20 to inc.h in aboveS20 branch"
           git push origin aboveS20
+
+      - name: Trigger the build action in the aboveS20 branch
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.repos.createDispatchEvent({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              event_type: 'publish-trigger',
+            });
